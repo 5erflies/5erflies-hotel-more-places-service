@@ -10,30 +10,30 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      properties: [],
+      // properties: [],
       property: [],
     },
 
-    this.setProperties = this.setProperties.bind(this);
-    this.getProperties = this.getProperties.bind(this);
+    // this.setProperties = this.setProperties.bind(this);
+    // this.getProperties = this.getProperties.bind(this);
     this.setProperty = this.setProperty.bind(this);
     this.getProperty = this.getProperty.bind(this);
   }
 
   componentDidMount() {
-    this.getProperties();
+    // this.getProperties();
     this.getProperty();
   }
 
-  getProperties() {
-    axios.get('/test-seeder')
-      .then(this.setProperties)
-      .catch(console.log);
-  }
+  // getProperties() {
+  //   axios.get('/test-seeder')
+  //     .then(this.setProperties)
+  //     .catch(console.log);
+  // }
 
-  setProperties(properties) {
-    this.setState({ properties: properties.data });
-  }
+  // setProperties(properties) {
+  //   this.setState({ properties: properties.data });
+  // }
 
   getProperty() {
     axios.get(`/test1/${query}`)

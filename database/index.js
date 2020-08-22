@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/morePlaces');
+mongoose.connect('mongodb://database/morePlaces');
 
 const morePlaces = mongoose.Schema({
   propertyId: Number,

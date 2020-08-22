@@ -30,15 +30,15 @@ app.get('/test1', (req, res) => {
 })
 
 //GET request for all properties
-app.get('/test-seeder', (req, res) => {
-  db.getAllProperties( (err, results) => {
-    if(err) {
-      console.log(err);
-    } else {
-      res.status(200).send(results);
-    }
-  });
-})
+// app.get('/test-seeder', (req, res) => {
+//   db.getAllProperties( (err, results) => {
+//     if(err) {
+//       console.log(err);
+//     } else {
+//       res.status(200).send(results);
+//     }
+//   });
+// })
 
 
 // start server
