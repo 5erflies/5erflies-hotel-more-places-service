@@ -27,6 +27,24 @@ const seeder = () => {
         max: 400,
       }),
     });
+    for (let j = 0; j < 12; j += 1) {
+      // console.log(results, 'results ')
+      const randomNumGen = () => {
+        if (newPlace.similarPlaces.length >= 12) {
+          return;
+        }
+        const randomNum = Math.floor(Math.random() * Math.floor(100));
+        if (randomNum === i || newPlace.similarPlaces.indexOf(randomNum) !== -1) {
+          return randomNumGen();
+        }
+        newPlace.similarPlaces.push(randomNum);
+        newPlace.save((error) => {
+          if (error) {
+            console.error(error);
+          }
+        });
+      };
+      randomNumGen();
 
     newPlace.save((err) => {
       if (err) {
@@ -35,6 +53,7 @@ const seeder = () => {
     });
   }
 };
-
+}
 seeder();
-module.exports.seeder = seeder;
+
+// module.exports.seeder = seeder;
