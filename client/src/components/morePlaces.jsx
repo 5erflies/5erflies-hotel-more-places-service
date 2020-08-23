@@ -29,7 +29,8 @@ class MorePlaces extends React.Component {
       let firstPage = this.props.places.slice(0, 4);
       return (
         <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
+          <Header>More places to stay
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
         <Wrapper>
           {firstPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
@@ -41,7 +42,8 @@ class MorePlaces extends React.Component {
       let secondPage = this.props.places.slice(4, 8);
       return (
         <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
+        <Header>More places to stay
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
         <Wrapper>
           {secondPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
@@ -53,7 +55,8 @@ class MorePlaces extends React.Component {
       let thirdPage = this.props.places.slice(8);
       return (
         <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
+          <Header>More places to stay
+          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
         <Wrapper>
           {thirdPage.map( (place) =>
             <MorePlacesEntry key={place.propertyId} place={place} />
@@ -65,10 +68,18 @@ class MorePlaces extends React.Component {
   }
 }
 
+const Header = styled.h2`
+  font-weight: 400;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
+`;
+
 const NavBar = styled.div`
   display: inline;
   float: right;
   padding: 5px 0 5px 0;
+  font-weight: 100;
+  font-size: 16px;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 `;
 
 const PrevButton = styled.button`

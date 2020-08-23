@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://database:27017/morePlaces');
+// mongoose.connect('mongodb://localhost/morePlaces');
 
 const morePlaces = mongoose.Schema({
   propertyId: Number,

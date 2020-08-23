@@ -48,22 +48,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Header>More places to stay </Header>
+      <BackgroundWrapper>
         <Wrapper>
           <MorePlaces places={this.state.property} />
         </Wrapper>
-      </div>
+      </BackgroundWrapper>
     )
   }
 }
-const Header = styled.h2`
-  font-weight: 100px;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
-`;
+
+const BackgroundWrapper = styled.div`
+  padding: 48px 0 48px 0;
+  background-color: rgb(247, 247, 247);
+`
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin: 0 180px 0 180px;
+  background-color: rgb(247, 247, 247);
 `;
 
 
