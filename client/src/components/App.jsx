@@ -65,7 +65,7 @@ const BackgroundWrapper = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 180px 0 180px;
+  margin: 0 300px 0 300px;
   background-color: rgb(247, 247, 247);
 `;
 
