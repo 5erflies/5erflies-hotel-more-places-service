@@ -114,7 +114,7 @@ const NextButton = styled.button`
   margin-left: 5px;
   border-radius: 50%;
   box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  cursor: pointer
+  cursor: pointer;
 
   &:hover {
     transform: scale(1.1);
