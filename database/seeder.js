@@ -16,10 +16,10 @@ const seeder = () => {
         min: 1,
         max: 5,
       }),
-      rating: faker.random.number({
+      rating: `${faker.random.number({
         min: 3,
-        max: 5,
-      }),
+        max: 4,
+      })}.${faker.random.number({min:0, max:99})}`,
       numOfRatings: faker.random.number(300),
       description: faker.random.arrayElement(mockData.propertyDescription),
       price: faker.random.number({
@@ -38,20 +38,15 @@ const seeder = () => {
           return randomNumGen();
         }
         newPlace.similarPlaces.push(randomNum);
-        newPlace.save((error) => {
-          if (error) {
-            console.error(error);
-          }
-        });
       };
       randomNumGen();
 
-    newPlace.save((err) => {
-      if (err) {
-        console.log(err);
-      }
-    });
   }
+  newPlace.save((err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
 };
 }
 seeder();
