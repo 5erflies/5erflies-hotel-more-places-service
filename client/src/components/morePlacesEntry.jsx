@@ -41,7 +41,7 @@ let MorePlacesEntry = (props) => {
   }
 }
 
-let starImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Screen+Shot+2020-08-14+at+9.41.44+PM.png";
+let starImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Star-Image.png";
 let heartImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png"
 
 const Card = styled.div`
