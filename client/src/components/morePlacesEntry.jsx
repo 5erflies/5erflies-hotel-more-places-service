@@ -53,7 +53,6 @@ const Card = styled.div`
     flex-shrink: 0;
     flex-basis: 33.333%;
   };
-  min-width: 25%;
   max-width: 33.333%;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-weight: 400;

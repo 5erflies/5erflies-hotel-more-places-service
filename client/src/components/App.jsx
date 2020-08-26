@@ -48,9 +48,11 @@ class App extends React.Component {
 
   render() {
     return (
+      <BackgroundWrapper>
         <Wrapper>
           <MorePlaces places={this.state.property} />
         </Wrapper>
+      </BackgroundWrapper>
     )
   }
 }
@@ -64,6 +66,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0 20% 0 20%;
+  background-color: rgb(247, 247, 247);
 `;
 
 
