@@ -29,43 +29,10 @@ class MorePlaces extends React.Component {
     let currentPage = this.props.places.slice(0, 4);
     if (this.state.pageNum === 0) {
       currentPage = this.props.places.slice(0, 4);
-      // return (
-      //   <div>
-      //     <Header>More places to stay
-      //     <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
-      //   <CardWrapper>
-      //     {firstPage.map( (place) =>
-      //       <MorePlacesEntry key={place.propertyId} place={place} />
-      //     )}
-      //   </CardWrapper>
-      //   </div>
-      // )
     } else if (this.state.pageNum === 1) {
       currentPage = this.props.places.slice(4, 8);
-      // return (
-      //   <div>
-      //   <Header>More places to stay
-      //     <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
-      //   <CardWrapper>
-      //     {secondPage.map( (place) =>
-      //       <MorePlacesEntry key={place.propertyId} place={place} />
-      //     )}
-      //   </CardWrapper>
-      //   </div>
-      // )
     } else if (this.state.pageNum === 2) {
       currentPage = this.props.places.slice(8);
-      // return (
-      //   <div>
-      //     <Header>More places to stay
-      //     <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
-      //   <CardWrapper>
-      //     {thirdPage.map( (place) =>
-      //       <MorePlacesEntry key={place.propertyId} place={place} />
-      //     )}
-      //   </CardWrapper>
-      //   </div>
-      // )
     }
     return (
       <div>
