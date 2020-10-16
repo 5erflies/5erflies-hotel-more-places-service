@@ -1,24 +1,24 @@
 import styled from 'styled-components';
 
 
-const BackgroundWrapper = styled.div`
+export const BackgroundWrapper = styled.div`
   padding: 48px 0 48px 0;
   background-color: rgb(247, 247, 247);
 `
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0 20% 0 20%;
   background-color: rgb(247, 247, 247);
 `;
 
-const Header = styled.h2`
+export const Header = styled.h2`
   font-weight: 400;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 `;
 
-const NavBar = styled.div`
+export const NavBar = styled.div`
   display: inline;
   float: right;
   padding: 5px 0 5px 0;
@@ -27,7 +27,7 @@ const NavBar = styled.div`
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
 `;
 
-const PrevButton = styled.button`
+export const ArrowButton = styled.button`
   border: 1px solid rgba(0,0,0,0.08);
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   font-weight: 200;
@@ -48,31 +48,15 @@ const PrevButton = styled.button`
   }
 `;
 
-const NextButton = styled.button`
-  border: 1px solid rgba(0,0,0,0.08);
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-weight: 200;
-  font-size: 16px;
-  height: 30px;
-  width: 30px;
-  margin-left: 5px;
-  border-radius: 50%;
-  box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.1);
-    transition-property: box-shadow, -ms-transform, -webkit-transform, transform !important;
-    transition-duration: 0.2s, 0.25s, 0.25s, 0.25s !important;
-    transition-timing-function: ease, ease, ease, ease !important;
-    transition-delay: 0s, 0s, 0s, 0s !important;
-  }
+export const CardWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  clear: both;
 `;
+export let starImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Star-Image.png";
+export let heartImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png"
 
-let starImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Star-Image.png";
-let heartImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png"
-
-const Card = styled.div`
+export const Card = styled.div`
   display: flex;
   flex-direction: column;
   border-width: 0px 10px;
@@ -88,11 +72,11 @@ const Card = styled.div`
   margin: 0 10px 0 10px;
 `;
 
-const ImageContainer = styled.div`
+export const ImageContainer = styled.div`
   position: relative;
 `
 
-const Image = styled.img`
+export const Image = styled.img`
   height: 100% || 120px;
   width: 100%;
   border-radius: 8px;
@@ -100,7 +84,7 @@ const Image = styled.img`
   z-index: 0;
 `;
 
-const SuperHost = styled.div`
+export const SuperHost = styled.div`
   position: absolute;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
   background-color: rgba(255, 255, 255, 0.95);
@@ -111,13 +95,13 @@ const SuperHost = styled.div`
   z-index: 1;
 `;
 
-const SuperHostCon = styled.span`
+export const SuperHostCon = styled.span`
   margin: 10px;
   font-weight: bold;
   font-size: 14px;
 `
 
-const HeartImg = styled.img`
+export const HeartImg = styled.img`
   height: 14px;
   width: 16px;
   position: absolute;
@@ -125,16 +109,16 @@ const HeartImg = styled.img`
   left: 92%;
   z-index: 1;
 `
-const StarImg = styled.img`
+export const StarImg = styled.img`
   height: 14px;
   width: 14px;
   line-height: 0px;
 `;
 
-const NumRatings = styled.span`
+export const NumRatings = styled.span`
   color: grey
 `
-const Description = styled.div`
+export const Description = styled.div`
   display: flex;
   flex: {
     flex-grow: 0;
@@ -143,6 +127,7 @@ const Description = styled.div`
   };
   max-width: 33.33%;
 `;
-const Price = styled.span`
+export const Price = styled.span`
   font-weight: bold;
 `;
+

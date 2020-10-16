@@ -1,7 +1,7 @@
 import React from 'react';
 import MorePlacesEntry from './morePlacesEntry.jsx';
 import styled from 'styled-components';
-import { Header, NavBar, PrevButton, NextButton, Wrapper } from './style.jsx';
+import { Header, NavBar, ArrowButton, CardWrapper } from './style.jsx';
 
 class MorePlaces extends React.Component {
   constructor(props) {
@@ -26,47 +26,64 @@ class MorePlaces extends React.Component {
   }
 
   render() {
+    let currentPage = this.props.places.slice(0, 4);
     if (this.state.pageNum === 0) {
-      let firstPage = this.props.places.slice(0, 4);
-      return (
-        <div>
-          <Header>More places to stay
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
-        <Wrapper>
-          {firstPage.map( (place) =>
-            <MorePlacesEntry key={place.propertyId} place={place} />
-          )}
-        </Wrapper>
-        </div>
-      )
+      currentPage = this.props.places.slice(0, 4);
+      // return (
+      //   <div>
+      //     <Header>More places to stay
+      //     <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
+      //   <CardWrapper>
+      //     {firstPage.map( (place) =>
+      //       <MorePlacesEntry key={place.propertyId} place={place} />
+      //     )}
+      //   </CardWrapper>
+      //   </div>
+      // )
     } else if (this.state.pageNum === 1) {
-      let secondPage = this.props.places.slice(4, 8);
-      return (
-        <div>
-        <Header>More places to stay
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
-        <Wrapper>
-          {secondPage.map( (place) =>
-            <MorePlacesEntry key={place.propertyId} place={place} />
-          )}
-        </Wrapper>
-        </div>
-      )
+      currentPage = this.props.places.slice(4, 8);
+      // return (
+      //   <div>
+      //   <Header>More places to stay
+      //     <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
+      //   <CardWrapper>
+      //     {secondPage.map( (place) =>
+      //       <MorePlacesEntry key={place.propertyId} place={place} />
+      //     )}
+      //   </CardWrapper>
+      //   </div>
+      // )
     } else if (this.state.pageNum === 2) {
-      let thirdPage = this.props.places.slice(8);
-      return (
-        <div>
-          <Header>More places to stay
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
-        <Wrapper>
-          {thirdPage.map( (place) =>
-            <MorePlacesEntry key={place.propertyId} place={place} />
-          )}
-        </Wrapper>
-        </div>
-      )
+      currentPage = this.props.places.slice(8);
+      // return (
+      //   <div>
+      //     <Header>More places to stay
+      //     <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar></Header>
+      //   <CardWrapper>
+      //     {thirdPage.map( (place) =>
+      //       <MorePlacesEntry key={place.propertyId} place={place} />
+      //     )}
+      //   </CardWrapper>
+      //   </div>
+      // )
     }
+    return (
+      <div>
+        <Header>More places to stay
+        <NavBar> {this.state.pageNum + 1} / 3    <ArrowButton onClick={this.prevArrowClick}>&lt;</ArrowButton><ArrowButton onClick={this.nextArrowClick}>&gt;</ArrowButton></NavBar></Header>
+      <CardWrapper>
+        {currentPage.map( (place) =>
+          <MorePlacesEntry key={place.propertyId} place={place} />
+        )}
+      </CardWrapper>
+      </div>
+    )
   }
 }
+
+
+
+
+
 
 export default MorePlaces;
