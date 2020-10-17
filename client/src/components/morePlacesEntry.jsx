@@ -42,6 +42,6 @@ let MorePlacesEntry = (props) => {
   }
 }
 
-
+//test
 
 export default MorePlacesEntry;
