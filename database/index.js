@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// mongoose.connect('mongodb://database:27017/morePlaces');
 mongoose.connect('mongodb://localhost/morePlaces');
 
 const morePlaces = mongoose.Schema({
@@ -40,40 +41,40 @@ const getProperty = (req, callback) => {
   })
 }
 
-const getAllProperties = (callback) => {
-  relatedPlaces.find({}, (err, results) => {
-    if (err) {
-      callback(err);
-    } else {
-      const { length } = results;
-      for (let i = 0; i < length; i += 1) {
-        for (let j = 0; j < 12; j += 1) {
-          // console.log(results, 'results ')
-          // console.log(randomNum)
-          const randomNumGen = () => {
-            if (results[i].similarPlaces.length >= 12) {
-              return;
-            }
-            const randomNum = Math.floor(Math.random() * Math.floor(results.length));
-            if (randomNum === i || results[i].similarPlaces.indexOf(randomNum) !== -1) {
-              return randomNumGen();
-            }
-            results[i].similarPlaces.push(results[randomNum].propertyId);
-            results[i].save((error) => {
-              if (error) {
-                console.error(error);
-              }
-            });
-          };
-          randomNumGen();
-        }
-      }
+// const getAllProperties = (callback) => {
+//   relatedPlaces.find({}, (err, results) => {
+//     if (err) {
+//       callback(err);
+//     } else {
+//       const { length } = results;
+//       for (let i = 0; i < length; i += 1) {
+//         for (let j = 0; j < 12; j += 1) {
+//           // console.log(results, 'results ')
+//           // console.log(randomNum)
+//           const randomNumGen = () => {
+//             if (results[i].similarPlaces.length >= 12) {
+//               return;
+//             }
+//             const randomNum = Math.floor(Math.random() * Math.floor(results.length));
+//             if (randomNum === i || results[i].similarPlaces.indexOf(randomNum) !== -1) {
+//               return randomNumGen();
+//             }
+//             results[i].similarPlaces.push(results[randomNum].propertyId);
+//             results[i].save((error) => {
+//               if (error) {
+//                 console.error(error);
+//               }
+//             });
+//           };
+//           randomNumGen();
+//         }
+//       }
       // console.log(faker.random.arrayElement(results), 'results')
-      callback(null, results);
-    }
-  });
-};
+//       callback(null, results);
+//     }
+//   });
+// };
 
 module.exports.getProperty = getProperty;
 module.exports.relatedPlaces = relatedPlaces;
-module.exports.getAllProperties = getAllProperties;
+// module.exports.getAllProperties = getAllProperties;

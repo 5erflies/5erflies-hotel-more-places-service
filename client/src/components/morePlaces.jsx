@@ -1,6 +1,7 @@
 import React from 'react';
 import MorePlacesEntry from './morePlacesEntry.jsx';
 import styled from 'styled-components';
+import { Header, NavBar, ArrowButton, CardWrapper } from './style.jsx';
 
 class MorePlaces extends React.Component {
   constructor(props) {
@@ -25,78 +26,31 @@ class MorePlaces extends React.Component {
   }
 
   render() {
+    let currentPage = this.props.places.slice(0, 4);
     if (this.state.pageNum === 0) {
-      let firstPage = this.props.places.slice(0, 4);
-      return (
-        <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
-        <Wrapper>
-          {firstPage.map( (place) =>
-            <MorePlacesEntry key={place.propertyId} place={place} />
-          )}
-        </Wrapper>
-        </div>
-      )
+      currentPage = this.props.places.slice(0, 4);
     } else if (this.state.pageNum === 1) {
-      let secondPage = this.props.places.slice(4, 8);
-      return (
-        <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
-        <Wrapper>
-          {secondPage.map( (place) =>
-            <MorePlacesEntry key={place.propertyId} place={place} />
-          )}
-        </Wrapper>
-        </div>
-      )
+      currentPage = this.props.places.slice(4, 8);
     } else if (this.state.pageNum === 2) {
-      let thirdPage = this.props.places.slice(8);
-      return (
-        <div>
-          <NavBar> {this.state.pageNum + 1} / 3    <PrevButton onClick={this.prevArrowClick}>&lt;</PrevButton><NextButton onClick={this.nextArrowClick}>&gt;</NextButton></NavBar>
-        <Wrapper>
-          {thirdPage.map( (place) =>
-            <MorePlacesEntry key={place.propertyId} place={place} />
-          )}
-        </Wrapper>
-        </div>
-      )
+      currentPage = this.props.places.slice(8);
     }
+    return (
+      <div>
+        <Header>More places to stay
+        <NavBar> {this.state.pageNum + 1} / 3    <ArrowButton onClick={this.prevArrowClick}>&lt;</ArrowButton><ArrowButton onClick={this.nextArrowClick}>&gt;</ArrowButton></NavBar></Header>
+      <CardWrapper>
+        {currentPage.map( (place) =>
+          <MorePlacesEntry key={place.propertyId} place={place} />
+        )}
+      </CardWrapper>
+      </div>
+    )
   }
 }
 
-const NavBar = styled.div`
-  display: inline;
-  float: right;
-  padding: 5px 0 5px 0;
-`;
 
-const PrevButton = styled.button`
-  border: 1px solid #C5C5C5;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-weight: 400;
-  font-size: 16px;
-  height: 30px;
-  width: 30px;
-  margin-right: 5px;
-  border-radius: 50%;
-`;
 
-const NextButton = styled.button`
-  border: 1px solid #C5C5C5;
-  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif !important;
-  font-weight: 400;
-  font-size: 16px;
-  height: 30px;
-  width: 30px;
-  margin-left: 5px;
-  border-radius: 50%;
-`;
 
-const Wrapper = styled.div`
-display: flex;
-flex-direction: row;
-clear: both;
-`;
+
 
 export default MorePlaces;
