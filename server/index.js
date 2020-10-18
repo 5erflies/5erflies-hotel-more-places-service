@@ -19,7 +19,7 @@ app.use(express.json());
 // create routes
 
 //GET request for one property
-app.get('/test1', (req, res) => {
+app.get('/morePlaces', (req, res) => {
   db.getProperty(req.query, (err, results) => {
     if (err) {
       console.log(err);
