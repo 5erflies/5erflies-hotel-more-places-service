@@ -11,6 +11,7 @@ export const Wrapper = styled.div`
   flex-direction: row;
   margin: 0 20% 0 20%;
   background-color: rgb(247, 247, 247);
+
 `;
 
 export const Header = styled.h2`
@@ -52,6 +53,7 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: row;
   clear: both;
+
 `;
 export let starImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Star-Image.png";
 export let heartImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png"
@@ -77,8 +79,22 @@ export const ImageContainer = styled.div`
 `
 
 export const Image = styled.img`
-  height: 100% || 120px;
-  width: 100%;
+  @media (min-width: 1440px) {
+    height: 178px;
+    width: 267px;
+  }
+  @media (min-width: 992px) {
+    height: 144px;
+    width: 216px;
+  }
+  @media (min-width: 600px) {
+    height: 144px;
+    width: 216px;
+  }
+  @media (max-width: 600px) {
+    height: 178px;
+    width: 267px;
+  }
   border-radius: 8px;
   position: relative;
   z-index: 0;
