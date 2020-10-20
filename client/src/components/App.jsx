@@ -25,7 +25,7 @@ class App extends React.Component {
 
 
   getProperty() {
-    axios.get(`/test1/${query}`)
+    axios.get(`/morePlaces/${query}`)
       .then(this.setProperty)
       .catch(console.log);
   }
