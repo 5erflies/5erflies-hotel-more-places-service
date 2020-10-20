@@ -72,6 +72,7 @@ export const Card = styled.div`
   font-weight: 400;
   font-size: 16px;
   margin: 0 10px 0 10px;
+  min-width: 0;
 `;
 
 export const ImageContainer = styled.div`
@@ -79,21 +80,21 @@ export const ImageContainer = styled.div`
 `
 
 export const Image = styled.img`
-  @media (min-width: 1440px) {
+  @media screen and (min-width: 1440px) {
     height: 178px;
     width: 267px;
   }
-  @media (min-width: 992px) {
+  @media screen and (min-width: 1024px) {
+    height: 201px;
+    width: 301px;
+  }
+  @media screen and (min-width: 600px) {
     height: 144px;
     width: 216px;
   }
-  @media (min-width: 600px) {
-    height: 144px;
-    width: 216px;
-  }
-  @media (max-width: 600px) {
-    height: 178px;
-    width: 267px;
+  @media screen and (max-width: 600px) {
+    height: 129px;
+    width: 193px;
   }
   border-radius: 8px;
   position: relative;
@@ -136,12 +137,11 @@ export const NumRatings = styled.span`
 `
 export const Description = styled.div`
   display: flex;
-  flex: {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 33.333%;
-  };
-  max-width: 33.33%;
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
 `;
 export const Price = styled.span`
   font-weight: bold;
