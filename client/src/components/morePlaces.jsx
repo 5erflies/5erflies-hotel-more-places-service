@@ -7,7 +7,7 @@ class MorePlaces extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      pageNum: 0
+      pageNum: 0,
     }
 
     this.nextArrowClick = this.nextArrowClick.bind(this);
