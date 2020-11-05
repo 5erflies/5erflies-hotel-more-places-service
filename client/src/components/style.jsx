@@ -1,17 +1,14 @@
 import styled from 'styled-components';
 
-
 export const BackgroundWrapper = styled.div`
   padding: 48px 0 48px 0;
   background-color: rgb(247, 247, 247);
-`
-
+`;
 export const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0 20% 0 20%;
   background-color: rgb(247, 247, 247);
-
 `;
 
 export const Header = styled.h2`
