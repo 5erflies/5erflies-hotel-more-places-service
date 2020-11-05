@@ -53,10 +53,11 @@ export const CardWrapper = styled.div`
   display: flex;
   flex-direction: row;
   clear: both;
-
 `;
+
 export let starImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/Star-Image.png";
-export let heartImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png"
+
+export let heartImg = "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png";
 
 export const Card = styled.div`
   display: flex;
@@ -77,7 +78,7 @@ export const Card = styled.div`
 
 export const ImageContainer = styled.div`
   position: relative;
-`
+`;
 
 export const Image = styled.img`
   @media screen and (min-width: 1440px) {
@@ -116,7 +117,7 @@ export const SuperHostCon = styled.span`
   margin: 10px;
   font-weight: bold;
   font-size: 14px;
-`
+`;
 
 export const HeartImg = styled.img`
   height: 14px;
@@ -125,7 +126,8 @@ export const HeartImg = styled.img`
   bottom: 88%;
   left: 92%;
   z-index: 1;
-`
+`;
+
 export const StarImg = styled.img`
   height: 14px;
   width: 14px;
@@ -134,7 +136,8 @@ export const StarImg = styled.img`
 
 export const NumRatings = styled.span`
   color: grey
-`
+`;
+
 export const Description = styled.div`
   display: flex;
   flex: 1;
@@ -143,6 +146,7 @@ export const Description = styled.div`
   text-overflow: ellipsis;
   min-width: 0;
 `;
+
 export const Price = styled.span`
   font-weight: bold;
 `;
