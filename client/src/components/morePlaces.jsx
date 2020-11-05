@@ -8,8 +8,6 @@ class MorePlaces extends React.Component {
     super(props);
     this.state = {
       pageNum: 0,
-      liked: false,
-      likes: 100,
     }
 
     this.nextArrowClick = this.nextArrowClick.bind(this);
@@ -45,7 +43,6 @@ class MorePlaces extends React.Component {
           <MorePlacesEntry key={place.propertyId} place={place} />
         )}
       </CardWrapper>
-      <button onClick={this.buttonClick} className={className}>Likes | {this.state.likes}</button>
       </div>
     )
   }

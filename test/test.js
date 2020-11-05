@@ -10,13 +10,13 @@ import MorePlacesEntry from '../client/src/components/morePlacesEntry.jsx';
 configure({ adapter: new Adapter() });
 
 
-// function setup() {
-//   const props = {
-//     imgPath: '/Users/tomnguyen/Desktop/Screenshots for FEC/Screen Shot 2020-08-07 at 6.32.09 PM.png'
-//   };
-//   const wrapper = shallow(<MorePlacesEntry />);
-//   return {wrapper, props};
-// }
+function setup() {
+  const props = {
+    imgPath: "https://hackreactor5erfliesmoreplaces.s3-us-west-1.amazonaws.com/airbnb-heart.png"
+  };
+  const wrapper = shallow(<MorePlacesEntry />);
+  return {wrapper, props};
+}
 const mockPlaces =
 [
   {
@@ -78,10 +78,11 @@ const mockPlaces =
 ]
 
 describe('App Test Suite', () => {
-  // it('Should have an image', () => {
-  //   const { wrapper } = setup();
-  //   expect(wrapper.find('img').props.exists()).toBe(true);
-  // });
+  it('Should have an image', () => {
+    const { wrapper } = setup();
+    expect(wrapper.find('img').props.exists()).toBe(true);
+  });
+
   it('App should be a stateful component', () => {
     expect(React.Component.isPrototypeOf(App)).toBeTruthy();
   });
@@ -89,17 +90,6 @@ describe('App Test Suite', () => {
   it('Should render MorePlaces when app is initialized', () => {
     let wrapper = shallow(<App />);
     expect(wrapper.find('Wrapper').exists(true));
-  })
-
-  it('should get all the properties', () => {
-    let wrapper = shallow(<App />);
-    let instance = wrapper.instance();
-    expect(wrapper.state('properties')).toHaveLength(0);
-    instance.getProperties();
-    setTimeout( () => {
-      expect(wrapper.state('properties')).toHaveLength(100);
-    }, 1000);
-
   })
 
   it('should get the 12 related properties', () => {
@@ -115,15 +105,35 @@ describe('App Test Suite', () => {
 }),
 
 describe('MorePlaces Test Suite', () => {
-  it('MorePlaces should be a stateless component', () => {
-    expect(React.Component.isPrototypeOf(MorePlaces)).toBeFalsy();
+  it('MorePlaces should be a stateful component', () => {
+    expect(React.Component.isPrototypeOf(MorePlaces)).toBeTruthy();
   });
 
   it('should render two MorePlacesEntry when given two property', () => {
     let wrapper = shallow(<MorePlaces places={mockPlaces} />);
 
     expect(wrapper.find('div').children()).toHaveLength(mockPlaces.length);
-  })
+  });
+
+  it('Clicking Next Arrow Button should change pageNum state', () => {
+    let morePlacesWrap = shallow(<MorePlaces />);
+    let morePlacesInstance = morePlacesWrap.instance();
+    expect(morePlacesWrap.state('pageNum')).toBe(0);
+    morePlacesInstance.nextArrowClick();
+    setTimeout( () => {
+      expect(morePlacesWrap.state('pageNum')).toBe(1);
+    }, 1000)
+  });
+
+  it('Clicking Previous Arrow Button should change pageNum state', () => {
+    let morePlacesWrap = shallow(<MorePlaces />);
+    let morePlacesInstance = morePlacesWrap.instance();
+    expect(morePlacesWrap.state('pageNum')).toBe(0);
+    morePlacesInstance.prevArrowClick();
+    setTimeout( () => {
+      expect(morePlacesWrap.state('pageNum')).toBe(2);
+    }, 1000)
+  });
 }),
 
 describe('MorePlacesEntry Test Suite', () => {
