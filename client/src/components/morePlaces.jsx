@@ -51,9 +51,4 @@ class MorePlaces extends React.Component {
   }
 }
 
-
-
-
-
-
 export default MorePlaces;
