@@ -114,7 +114,7 @@ describe('MorePlaces Test Suite', () => {
 
     expect(wrapper.find('div').children()).toHaveLength(mockPlaces.length);
   });
-
+  //why do these tests have undefined? is it because of shallow rendering?
   it('Clicking Next Arrow Button should change pageNum state', () => {
     let morePlacesWrap = shallow(<MorePlaces />);
     let morePlacesInstance = morePlacesWrap.instance();
